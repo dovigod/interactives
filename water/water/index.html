@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Water Ripples-mouse</title>
+</head>
+<body>
+    <section class='water-effect'>
+        <h1>Water effect</h1>
+        <div class="water"></div>
+        <svg>
+            <filter
+            id="turbulence"
+            x='0' y='0'
+            width = '100%'
+            height = '100%'
+            >
+                <feTurbulence
+                    id='water-filter'
+                    numOctaves='4'
+                ></feTurbulence>
+                <feDisplacementMap
+                    scale='50'
+                    in='SourceGraphic'
+                ></feDisplacementMap>
+    
+                <animate
+                    xlink:href='#water-filter'
+                    attributeName='baseFrequency'
+                    dur='30s'
+                    keyTimes="0; 1"
+                    values='0.03; 0.06;'
+                    repeatCount='indefinite'
+                ></animate>
+        </filter>
+        </svg>
+    </section>
+    
+
+    <script src="./index.js"></script>
+    
+</body>
+</html>
+
+<!-- filter-> specify filter we want to use -->
+<!-- numOctaves = defines numb of octaves for noise function  -->
+<!-- higher = more natural noise looks , higher octaver = bad performance -->
+
+
+<!-- <displacementMap> => apply this filter to an image, set scale, in = input of filter -->
+
+<!-- animate tag = animate filter ,
+1. link the filter using id
+2. set duration
+3. specift attribute we are going to animate  , baseFrequency = how frequent the noise will be ,
+4.keyTimes = similar with keyframes in css, we basically specify what the value for basefrequency is going to be at the start, and end , 0~1
+5.values = needs to have same ammount of values as the number of keytimes , initially 0.03 , then grow at the end to 0.06-->

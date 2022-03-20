@@ -1,0 +1,111 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+}
+/* .hexagon{
+    position:relative;
+    width: 60px;
+    height: 100px;
+    background-color: black;
+}
+
+.hexagon::before{
+    position: absolute;
+    content: '';
+    top: 0;
+    left: -30px;
+    width: 0px;
+    height: 0px;
+    border-right: 30px solid #000;
+    border-top: 50px solid transparent;
+    border-bottom: 50px solid transparent;
+}
+.hexagon::after{
+    position: absolute;
+    content: '';
+    top: 0;
+    right: -30px;
+    width: 0px;
+    height: 0px;
+    border-left: 30px solid #000;
+    border-top: 50px solid transparent;
+    border-bottom: 50px solid transparent;
+} */
+
+.container{
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+    /* animation: animate 5s linear infinite; */
+}
+.row{
+    display: inline-flex;
+    margin-top : -32px;
+    margin-left: -50px;
+}
+.row:nth-child(even){
+    margin-left: 1px;
+}
+.hexagon{
+    position: relative;  
+    width: 100px;
+    height: 110px;
+    background: #111;
+    clip-path: polygon(50% 0% , 100% 25% , 100% 75% ,50% 100% , 0% 75%, 0% 25%);
+    margin: 2px;
+    transition: all 2s linear;
+    border: 1px solid black;
+}
+.hexagon:hover{
+    transition : 0s;
+    /* background: #0f0; */
+}
+.hexagon::before{
+    content: '';
+    position: absolute;
+    top : 0;
+    left: 0;
+    width : 50%;
+    height : 100%;
+    pointer-events: none;
+    background: rgba(255,255,255 , 0.1);
+    z-index: 10;
+}
+.hexagon::after{
+    content: '';
+    position: absolute;
+    top : 4px;
+    bottom : 4px;
+    left: 4px;
+    right: 4px;
+    background: #111;
+    clip-path: polygon(50% 0% , 100% 25% , 100% 75% ,50% 100% , 0% 75%, 0% 25%);
+    z-index: 1;
+}
+#cursor{
+    position : absolute;
+    width: 400px;
+    height: 400px;
+    background-color: #0f0;
+    top : 0;
+    left :0;
+    border-radius: 50%;
+    transform: translate(-50%,-50%);
+    animation: animate 4s linear infinite;
+    z-index: -3;
+}
+@keyframes animate{
+    0%{
+        filter : hue-rotate(0deg) blur(50px);
+    }
+    100%{
+        filter : hue-rotate(360deg) blur(50px);
+    }
+}

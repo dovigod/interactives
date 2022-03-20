@@ -1,0 +1,90 @@
+*{
+    margin : 0;
+    padding : 0;
+    box-sizing: border-box;
+}
+
+
+body{
+    min-height: 100vh;
+    height: 100vh;
+}
+canvas{
+    overflow: hidden;
+}
+body{
+    background-color: black;
+}
+
+.waveWrapper{
+    position: absolute;
+}
+#background{
+    background: url('../../static/image/gloomyBridge.jpg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 100vh;
+    position: fixed;
+    background-attachment: fixed;
+    z-index: 0;
+    width: 100%;
+    overflow: hidden;
+    background-position: center;
+}
+.wave{
+    position:absolute;
+    top:calc((100% - 30px)/2);
+    left:calc((100% - 30px)/2);
+    width:30px;
+    height:30px;
+    border-radius: 50%;
+    background: url('../../static/image//gloomyBridge.jpg');
+    background-size: auto 100%;
+    background-attachment:fixed;
+    background-position:center center;
+    background-repeat: no-repeat;
+  }
+  .wave0{
+    z-index:2;
+    background-size:auto 106%;
+    animation:ripple 1s forwards;
+  }
+  .wave1{
+    z-index:3;
+    background-size:auto 102%;
+    animation:ripple 1s .2s forwards;
+  }
+  .wave2{
+    z-index:4;
+    background-size:auto 104%;
+    animation:ripple 1s .4s forwards;
+  }
+  .wave3{
+    z-index:5;
+    background-size:auto 101%;
+    animation:ripple 1s .5s forwards;
+  }
+  .wave4{
+    z-index:6;
+    background-size:auto 102%;
+    animation:ripple 1s .8s forwards;
+  }
+  .wave5{
+    z-index:7;
+    background-size:auto 100%;
+    animation:ripple 1s 1s forwards;
+  }
+  @keyframes ripple{
+    0%{
+      top:calc((100% - 30px)/2);
+      left:calc((100% - 30px)/2);
+      width:30px;
+      height:30px;
+    }
+    100%{
+      top:calc((100% - 500px)/2);
+      left:calc((100% - 500px)/2);
+      width:500px;
+      height:500px;
+    }
+  }

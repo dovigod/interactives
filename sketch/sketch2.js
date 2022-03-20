@@ -6,8 +6,8 @@ const settings = {
 	dimensions: [2000, 2000]
 };
 
-const degToRad = (degree) => {
-	return (degree / 180) * Math.PI;
+const degToRad = (angle) => {
+	return (angle / 180) * Math.PI;
 };
 
 const data = [];
@@ -201,9 +201,9 @@ const sketch = () => {
 					context.clearRect(0, 0, width, height);
 				}
 				data[i].draw();
-				arcData[i].draw();
+				//arcData[i].draw();
 				data[i].update();
-				arcData[i].update();
+				// arcData[i].update();
 			}
 			requestAnimationFrame(animate);
 		};
@@ -277,7 +277,7 @@ const sketch = () => {
 				utils.randomRange(0.2, 0.5)
 			);
 
-			arcData.push(Arc);
+			//arcData.push(Arc);
 			data.push(vertical);
 		}
 
