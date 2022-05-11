@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+
+*{
+    font-family:'Noto sans', Sans-Serif;
+    margin: 0;
+    padding : 0;
+}
+
+section{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    overflow: hidden;
+}
+
+section div{
+    position: relative;
+    width: 50%;
+    background: tomato;
+    overflow: hidden;
+}
+
+section div:nth-child(1){
+    position: relative;
+    width: 50%;
+    background: url('../../static/image/gloomyBridge.jpg');
+    background-size: cover;
+}
+
+section div:nth-child(1) h2{
+    -webkit-text-stroke: 2px;
+    -webkit-text-stroke-color: white;
+    -webkit-text-fill-color: transparent;
+    left: 100%;
+}
+section div h2{
+    position :absolute;
+    white-space: nowrap;
+    font-size: 12em;
+    line-height: 100vh;
+    animation : animate 5s linear infinite;
+    color : #fff;
+    z-index: 2;
+}
+
+
+
+@keyframes animate{
+    0%{
+        transform: translateX(0);
+    }
+    100%{
+        transform: translateX(-100%);
+    }
+}
